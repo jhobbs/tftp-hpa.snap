@@ -1,0 +1,17 @@
+name: tftp-hpa-jhobbs
+version: 0
+summary: Trivial File Transfer Protocol Client
+description: HPA's tftp client.
+confinement: strict
+
+apps:
+    tftp:
+        command: usr/bin/tftp
+        plugs: [home, network, network-bind]
+
+parts:
+    tftp:
+        plugin: make
+        source: https://git.kernel.org/pub/scm/network/tftp/tftp-hpa.git
+        snap:
+            - usr/bin/tftp
